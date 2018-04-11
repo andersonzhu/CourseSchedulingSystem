@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="borderPane" xmlns="http://javafx.com/javafx/8.0.121"
+            stylesheets="@TableView.css"
+            fx:controller="schedule.ScheduleTableController">
+
+    <top>
+        <HBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <!--<MenuItem mnemonicParsing="false" onAction="#handleCreateFile" text="New..."/>-->
+                                <MenuItem mnemonicParsing="false" onAction="#handleOpenFile" text="Open..."/>
+                                <!--<MenuItem mnemonicParsing="false" onAction="#handleCombineFile" text="Combine..."/>-->
+                                <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Save As..."/>
+                                <SeparatorMenuItem mnemonicParsing="false"/>
+                                <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Course">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#showSearchCourseDialog" text="Add"/>
+                                <MenuItem mnemonicParsing="false" onAction="#showEditCourseDialog" text="Edit"/>
+                                <MenuItem mnemonicParsing="false" onAction="#showDuplicateCourseDialog" text="Duplicate"/>
+                                <MenuItem mnemonicParsing="false" onAction="#showDeleteCourseDialog" text="Delete"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Summary">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Summary"/>
+                                <Menu mnemonicParsing="false" text="Visualize">
+                                    <items>
+                                        <RadioMenuItem mnemonicParsing="false" text="By week"/>
+                                        <RadioMenuItem mnemonicParsing="false" text="By room"/>
+                                    </items>
+                                </Menu>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="courseTableView" GridPane.rowIndex="1" GridPane.columnIndex="0" onMouseClicked="#handleDoubleClick">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+
+            <columns>
+                <TableColumn prefWidth="110.0" text="Department">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="department"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="CourseID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="courseID"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="60.0" text="Type">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="70.0" text="Section">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="section"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="260.0" text="Course Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="courseName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="Credits">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="credits"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="60.0" text="Max">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="max"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="70.0" text="Status">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="status"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="90.0" text="Instructor">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="instructor"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="Campus">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="campus"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="70.0" text="Room">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="room"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="Days">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="days"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100.0" text="StartTime">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="startTime"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100.0" text="EndTime">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="endTime"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

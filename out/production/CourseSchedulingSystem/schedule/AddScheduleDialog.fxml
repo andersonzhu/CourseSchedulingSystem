@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="625.0" prefWidth="500.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schedule.AddScheduleDialogController">
+    <Label layoutX="26.0" layoutY="33.0" text="You are scheduling the following course">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+    <Label fx:id="deptLabel" layoutX="88.0" layoutY="74.0" text="MATH">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+    <Label fx:id="courseIDLabel" layoutX="144.0" layoutY="74.0" text="1314">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+    <Label fx:id="courseNameLabel" layoutX="193.0" layoutY="74.0" prefHeight="17.0" prefWidth="260.0" text="College Algebra">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+    <VBox alignment="BOTTOM_RIGHT" layoutY="122.0" prefHeight="200.0" prefWidth="100.0">
+        <children>
+            <Label text="Type">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="Section">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="Instructor">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="Status">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="Campus">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="Room">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="Days">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="Max">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="Start Time">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+            <Label text="End Time">
+                <padding>
+                    <Insets bottom="25.0" />
+                </padding>
+            </Label>
+        </children>
+    </VBox>
+    <JFXComboBox fx:id="typeComboBox" layoutX="113.0" layoutY="113.0" prefWidth="100.0" />
+    <JFXComboBox fx:id="sectionLetterComboBox" layoutX="113.0" layoutY="156.0" prefHeight="25.0" prefWidth="70.0" style="-fx-prompt-text-fill: #FFFF8D" />
+    <JFXTextField fx:id="sectionNumberTextField" layoutX="188.0" layoutY="157.0" prefHeight="25.0" prefWidth="70.0">
+        <padding>
+            <Insets left="5.0" right="5.0" />
+        </padding>
+    </JFXTextField>
+    <JFXComboBox fx:id="sectionTypeComboBox" layoutX="262.0" layoutY="157.0" prefHeight="25.0" prefWidth="80.0" />
+    <JFXTextField fx:id="instructorTextField" layoutX="113.0" layoutY="199.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="230.0" />
+    <JFXTextField fx:id="maxTextField" layoutX="114.0" layoutY="407.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="100.0" />
+    <JFXComboBox fx:id="statusComboBox" layoutX="113.0" layoutY="241.0" prefWidth="100.0" />
+    <JFXComboBox fx:id="campusComboBox" layoutX="114.0" layoutY="281.0" prefWidth="100.0" />
+    <JFXTimePicker fx:id="startTimePicker" layoutX="114.0" layoutY="439.0" prefWidth="100.0" />
+    <JFXTimePicker fx:id="endTimePicker" layoutX="114.0" layoutY="476.0" prefWidth="100.0" />
+    <HBox layoutX="113.0" layoutY="376.0" spacing="5.0">
+        <children>
+            <JFXCheckBox fx:id="mCheckBox" mnemonicParsing="false" style="-fx-text-fill: #FFFF8D" text="M" />
+            <JFXCheckBox fx:id="tCheckBox" mnemonicParsing="false" style="-fx-text-fill: #FFFF8D" text="T" />
+            <JFXCheckBox fx:id="wCheckBox" mnemonicParsing="false" style="-fx-text-fill: #FFFF8D" text="W" />
+            <JFXCheckBox fx:id="rCheckBox" mnemonicParsing="false" style="-fx-text-fill: #FFFF8D" text="R" />
+            <JFXCheckBox fx:id="fCheckBox" mnemonicParsing="false" style="-fx-text-fill: #FFFF8D" text="F" />
+        </children>
+    </HBox>
+    <JFXComboBox fx:id="roomBLDGComboBox" layoutX="113.0" layoutY="320.0" prefHeight="25.0" prefWidth="100.0" />
+    <JFXTextField fx:id="roomNumberTextField" layoutX="224.0" layoutY="320.0" prefHeight="25.0" prefWidth="100.0">
+        <padding>
+            <Insets left="5.0" />
+        </padding>
+    </JFXTextField>
+
+    <JFXButton fx:id="cancelButton" layoutX="132.0" layoutY="552.0" mnemonicParsing="false" onAction="#handleCancelButtonClick" prefHeight="40.0" prefWidth="91.0" text="Cancel" />
+    <JFXButton fx:id="okButton" layoutX="330.0" layoutY="552.0" mnemonicParsing="false" onAction="#handleOKButtonClick" prefHeight="40.0" prefWidth="91.0" text="OK" />
+
+
+</AnchorPane>

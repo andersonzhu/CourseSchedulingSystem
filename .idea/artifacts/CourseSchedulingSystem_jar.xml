@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CourseSchedulingSystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CourseSchedulingSystem_jar</output-path>
+    <root id="archive" name="CourseSchedulingSystem.jar">
+      <element id="module-output" name="CourseSchedulingSystem" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jfoenix-8.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../algs4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
